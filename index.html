@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG</title>
+    <style>
+        svg {
+            width: 800px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div><button id="toggleButton">Сменить на ночь</button></div>
+    <svg width="800" height="600" id="day">
+        <!-- Небо -->
+        <rect width="100%" height="100%" fill="skyblue" />
+
+        <!-- Солнце -->
+        <circle cx="700" cy="100" r="50" fill="yellow" />
+
+        <!-- Трава -->
+        <rect y="500" width="100%" height="100" fill="green" />
+
+        <!-- Дом -->
+        <rect x="300" y="400" width="200" height="150" fill="lightcoral" />
+        <polygon points="300,400 400,300 500,400" fill="saddlebrown" />
+
+        <!-- Окна -->
+        <rect x="330" y="450" width="40" height="40" fill="white" />
+        <rect x="430" y="450" width="40" height="40" fill="white" />
+
+        <!-- Дверь -->
+        <rect x="380" y="480" width="40" height="70" fill="burlywood" />
+
+        <!-- Дерево -->
+        <rect x="150" y="450" width="20" height="50" fill="saddlebrown" />
+        <circle cx="160" cy="420" r="40" fill="forestgreen" />
+    </svg>
+
+    <svg width="800" height="600" id="night" style="display: none;">
+        <!-- Небо -->
+        <rect width="100%" height="100%" fill="#171d98" />
+
+        <!-- Солнце -->
+        <circle cx="700" cy="100" r="50" fill="#f4ffcb" />
+
+        <!-- Трава -->
+        <rect y="500" width="100%" height="100" fill="green" />
+
+        <!-- Дом -->
+        <rect x="300" y="400" width="200" height="150" fill="lightcoral" />
+        <polygon points="300,400 400,300 500,400" fill="saddlebrown" />
+
+        <!-- Окна -->
+        <rect x="330" y="450" width="40" height="40" fill="yellow" />
+        <rect x="430" y="450" width="40" height="40" fill="yellow" />
+
+        <!-- Дверь -->
+        <rect x="380" y="480" width="40" height="70" fill="burlywood" />
+
+        <!-- Дерево -->
+        <rect x="150" y="450" width="20" height="50" fill="saddlebrown" />
+        <circle cx="160" cy="420" r="40" fill="forestgreen" />
+    </svg>
+    <script>
+    const button = document.getElementById('toggleButton');
+    const day = document.getElementById('day');
+    const night = document.getElementById('night');
+
+    button.addEventListener('click', () => {
+        if (day.style.display === 'none') {
+            day.style.display = 'block';
+            night.style.display = 'none';
+            button.textContent = 'Сменить на ночь';
+        } else {
+            day.style.display = 'none';
+            night.style.display = 'block';
+            button.textContent = 'Сменить на день';
+        }
+    });
+</script>
+
+
+
+</body>
+</html>
